@@ -10,7 +10,37 @@
 </head>
 
 <body>
-<div> Hello</div>
+  <button> onclick= "graphData()" >Show data </button>
 
+<script>
+  function graphData() {
+    const query = `
+    query {
+      user {
+        id, 
+        firstName,
+        lastName
+      }
+    }
+    `;
+    fetch("http://localhost4000/grapql", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+      },
+      body: JSON.stringify({
+        query
+      })
+
+    }).then(response => {
+      return response.json();
+
+    }).then(data => {
+      console.log(data);
+
+    })
+  }
+</script>
 
 </body>
