@@ -17,15 +17,16 @@
 <script>
   function graphData() {
     const query = ` 
-    query {
-      user {
-        id, 
-        firstName,
-        lastName
-      }
+    {
+  query {
+    user(where: { id: { _eq: 6 }}) {
+      id
+      login
     }
+  }
+}
     `;
-    fetch("http://localhost4000/grapql", {
+    fetch("https://01.kood.tech/graphiql/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
