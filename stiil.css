@@ -1,0 +1,29 @@
+.nii{
+    border: 1px solid;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+.see{
+ 
+  display: flex;
+  justify-content: center;
+}
+
+.child {
+  
+  display: flex;
+  justify-content: center;
+  background-color: rgb(236, 86, 86);
+}
+.child1 {
+ 
+  display: flex;
+  justify-content: center;
+  background-color: rgb(211, 29, 29);
+}
+
+  body, html {
+    height: 100%;
+  }
+  

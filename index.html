@@ -5,47 +5,54 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" 
+  href="http://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+  <link rel="stylesheet" href="stiil.css">
   <title>Main</title>
-  
+  <script src= "script.js" defer> </script>
+ 
+  <script src="http://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
 </head>
 
 <body>
-  <button onclick= "graphData()"> Show data </button>
-<div>
-  hellosssss
-  misdas
-  ssss
+  
+  <div class = "nii">
+    <h2> Name:
+    </h2>
+    <h2 id = "nimi"></h2>
+  </div>
+  <div class = "nii">
+<h2>User ID: </h2>
+    <h2 id = "id1"></h2>
+
+  </div>
+  <div class = "nii">
+    <h2> Level:
+        </h2>
+        <h2 id = "lvl"></h2>
+    
+      </div>
+<div class = "nii" id = "summa"></div>
+<div class = "nii" id = "date"></div>
+
+<div class="nii">
+  <h2>Xp Graph</h2>
 </div>
-<script>
-  function graphData() {
-    const query = ` 
-    {
-  query {
-    user(where: { id: { _eq: 6 }}) {
-      id
-      login
-    }
-  }
-}
-    `;
-    fetch("https://01.kood.tech/graphiql/", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Accept": "application/json",
-      },
-      body: JSON.stringify({
-        query
-      })
 
-    }).then(response => {
-      return response.json();
+<div  class="ct-chart ct-perfect-fourth"></div>
 
-    }).then(data => {
-      console.log(data);
 
-    })
-  }
-</script>
+<div class="nii">
+  
+  <h2>Audit ratio</h2>
+  
+</div>
+<div class="see"> 
+  <div class="child"> <h3>Audits Missed</h3> </div>
+  <div class="child1"> <h3> Audits Completed</h3> </div>
+  
+</div>
+
+<div  class="ct-chart1 ct-perfect-fourth"></div>
 
 </body>
