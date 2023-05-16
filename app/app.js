@@ -32,7 +32,7 @@ const headers = new Headers({
     jwt_token = token;
     
   
-    console.log("token Handletokenis", token)
+    //console.log("token Handletokenis", token)
     // Hide the login form and show the logout button
     loginFormContainer.style.display = 'none';
     logoutButtonContainer.style.display = 'block';
