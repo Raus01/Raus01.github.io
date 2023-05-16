@@ -56,7 +56,7 @@ const headers = new Headers({
     event.preventDefault();
 
     const username = event.target.elements.username.value;
-    console.log(username)
+    //console.log(username)
     const password = event.target.elements.password.value;
     
     const headers = new Headers({
