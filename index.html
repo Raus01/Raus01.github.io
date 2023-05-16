@@ -5,54 +5,92 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" 
-  href="http://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
   <link rel="stylesheet" href="stiil.css">
   <title>Main</title>
-  <script src= "script.js" defer> </script>
- 
-  <script src="http://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+  <!-- <script src= "script.js" defer> </script>
+  <script src= "server.js" defer> </script> -->
+
+  <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+
+  <script type="module" src="app/script.js"></script>
 </head>
 
 <body>
-  
-  <div class = "nii">
-    <h2> Name:
-    </h2>
-    <h2 id = "nimi"></h2>
-  </div>
-  <div class = "nii">
-<h2>User ID: </h2>
-    <h2 id = "id1"></h2>
 
-  </div>
-  <div class = "nii">
-    <h2> Level:
-        </h2>
-        <h2 id = "lvl"></h2>
-    
+
+  <div id="login-form-container">
+    <h1>Login</h1>
+    <form id="login-form">
+      <div>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
       </div>
-<div class = "nii" id = "summa"></div>
-<div class = "nii" id = "date"></div>
+      <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <div>
+        <button type="submit">Submit</button>
 
-<div class="nii">
-  <h2>Xp Graph</h2>
-</div>
+      </div>
+    </form>
+  </div>
 
-<div  class="ct-chart ct-perfect-fourth"></div>
+  <div id="logout-button-container" style="display:none;">
+
+    <button id="logout-button">Log out</button>
 
 
-<div class="nii">
+    <div class="nii">
+      <h2> Name:
+      </h2>
+      <h2 id="nimi"></h2>
+    </div>
+    <div class="nii">
+      <h2>User ID: </h2>
+      <h2 id="id1"></h2>
+
+    </div>
+    <div class="nii">
+      <h2> Level:
+      </h2>
+      <h2 id="lvl"></h2>
+
+    </div>
+    <div class="nii" id="summa"></div>
+    <div class="nii" id="date"></div>
+
+    <div class="nii">
+      <h2>Project Xp Graph</h2>
+    </div>
+
+    <div class="ct-chart ct-perfect-fourth"></div>
+
+
+    <div class="nii">
+
+      <h2>Audit ratio</h2>
+
+    </div>
+    <div class="see">
+      <div class="child">
+        <h3>Audits Missed</h3>
+      </div>
+      <div class="child1">
+        <h3> Audits Completed</h3>
+      </div>
+
+    </div>
+
+
+    <div class="ct-chart1 ct-perfect-third"></div>
+  </div>
+
   
-  <h2>Audit ratio</h2>
-  
-</div>
-<div class="see"> 
-  <div class="child"> <h3>Audits Missed</h3> </div>
-  <div class="child1"> <h3> Audits Completed</h3> </div>
-  
-</div>
 
-<div  class="ct-chart1 ct-perfect-fourth"></div>
+  <script type="module" src="app/app.js"></script>
 
 </body>
+
+</html>
