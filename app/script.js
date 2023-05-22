@@ -163,6 +163,8 @@ async function fetchUserData2(jwt_token) {
 // // getting the amount of ex per project and the date
 async function fetchUserData3(jwt_token) {
 
+  const totaal = document.getElementById('tot');
+
   const token = jwt_token
 
   const tokenParts = token.split(".");
@@ -241,6 +243,8 @@ async function fetchUserData3(jwt_token) {
     //console.log(matchingAmounts);
 
     const am = [];
+
+    
     const da = [];
 
     matchingAmounts.forEach(item => {
@@ -260,6 +264,12 @@ async function fetchUserData3(jwt_token) {
        sum += dam[i];
         dam[i] = sum;
   }
+
+  let lastElement = am.slice(-1);
+
+  totaal.innerText = lastElement
+
+   // console.log(lastElement);
     //console.log(dam)
 
 
