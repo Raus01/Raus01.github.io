@@ -10,10 +10,10 @@ const PORT = process.env.PORT ||10000; // Change this to the port you want to us
 //const __dirname = path.dirname(new URL(import.meta.url).pathname);
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join( '..', 'index.html'));
+  res.sendFile(('index.html'));
 });
 
-app.use(express.static(path.join('..')));
+app.use(express.static(('..')));
 
 app.use(function(req, res, next) {
   res.setHeader('Access-Control-Allow-Origin', '*');
