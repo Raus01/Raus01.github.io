@@ -70,7 +70,7 @@ const headers = new Headers({
     };
 
     try {
-      const response = await fetch("http://localhost:3000/proxy", options);
+      const response = await fetch("https://graphql-uzxj.onrender.com/proxy", options);
       const data = await response.json();
       const token = data.token;
       
