@@ -2,9 +2,28 @@ import express, { json } from 'express';
 //const fetch = (await import('node-fetch')).default;
 import fetch from 'node-fetch';
 import cors from 'cors';
+import path from 'path'
 
 const app = express();
 const PORT = process.env.PORT ||10000; // Change this to the port you want to use
+
+const __dirname = path.dirname(new URL(import.meta.url).pathname);
+
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(function(req, res, next) {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+  res.setHeader('Access-Control-Allow-Credentials', true);
+  next();
+})
 
 app.use(cors());
 
