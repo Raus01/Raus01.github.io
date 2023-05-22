@@ -9,8 +9,6 @@ const PORT = process.env.PORT ||10000; // Change this to the port you want to us
 
 const __dirname = path.dirname(new URL(import.meta.url).pathname);
 
-app.use(express.static(path.join(__dirname, '..')));
-
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '..', 'index.html'));
 });
