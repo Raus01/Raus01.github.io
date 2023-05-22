@@ -59,7 +59,7 @@ app.get('/', (req, res) => {
   res.sendFile(filePath);
 });
 
-
+app.use(express.static(path.join(__dirname)));
 // Start the server
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
