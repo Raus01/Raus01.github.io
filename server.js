@@ -7,13 +7,13 @@ import path from 'path'
 const app = express();
 const PORT = process.env.PORT ||10000; // Change this to the port you want to use
 
-const __dirname = path.dirname(new URL(import.meta.url).pathname);
+//const __dirname = path.dirname(new URL(import.meta.url).pathname);
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'index.html'));
+  res.sendFile(path.join( '..', 'index.html'));
 });
 
-app.use(express.static(path.join(__dirname, '..')));
+app.use(express.static(path.join('..')));
 
 app.use(function(req, res, next) {
   res.setHeader('Access-Control-Allow-Origin', '*');
