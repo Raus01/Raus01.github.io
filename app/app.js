@@ -60,10 +60,19 @@ const headers = new Headers({
     const username = event.target.elements.username.value;
     //console.log(username)
     const password = event.target.elements.password.value;
-
-    const credentials = `${username}:${password}`;
-  //const encodedData = encoder.encode(credentials);
-  const encodedCredentials = Buffer.from(credentials).toString('base64');
+    
+    let encodedCredentials;
+    
+    if (typeof Buffer !== 'undefined') {
+      const credentials = `${username}:${password}`;
+      const encodedData = Buffer.from(credentials, 'utf-8');
+      encodedCredentials = encodedData.toString('base64');
+    } else {
+      const encoder = new TextEncoder();
+      const credentials = `${username}:${password}`;
+      const encodedData = encoder.encode(credentials);
+      encodedCredentials = btoa(String.fromCharCode(...encodedData));
+    }
 
     
     const headers = new Headers({
