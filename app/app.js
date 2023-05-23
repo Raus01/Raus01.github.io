@@ -42,10 +42,6 @@ const headers = new Headers({
   export { jwt_token, handleToken };
   
 
-  app.get('/favicon.ico', (req, res) => {
-    res.sendStatus(204); // Return a 204 No Content response
-  });
-  
   const handleLogout = () => {
     // Remove the token from local storage or a cookie
     localStorage.removeItem('token');
@@ -66,7 +62,6 @@ const headers = new Headers({
     const password = event.target.elements.password.value;
     
     let encodedCredentials;
-
     if (typeof Buffer !== 'undefined') {
       const credentials = `${username}:${password}`;
       const encodedData = Buffer.from(credentials, 'utf-8');
