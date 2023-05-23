@@ -55,13 +55,20 @@ const headers = new Headers({
   loginForm.addEventListener('submit', async (event) => {
     event.preventDefault();
 
+    //const encoder = new TextEncoder();
+
     const username = event.target.elements.username.value;
     //console.log(username)
     const password = event.target.elements.password.value;
+
+    const credentials = `${username}:${password}`;
+  //const encodedData = encoder.encode(credentials);
+  const encodedCredentials = window.btoa(credentials);
+
     
     const headers = new Headers({
       "Content-Type": "application/json",
-      "Authorization": "Basic " + btoa(`${username}:${password}`)
+      "Authorization": "Basic " + encodedCredentials
     });
 
     const options = {
