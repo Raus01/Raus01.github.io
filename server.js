@@ -10,7 +10,7 @@ const __dirname = dirname(__filename);
 
 
 const app = express();
-const PORT = process.env.PORT ||10000; // Change this to the port you want to use
+const PORT = process.env.PORT ||3000; // Change this to the port you want to use
 
 //const __dirname = path.dirname(new URL(import.meta.url).pathname);
 
@@ -32,6 +32,7 @@ app.get('/proxy', async (req, res) => {
   const decodedCredentials = Buffer.from(encodedCredentials, 'base64').toString();
   const [username, password] = decodedCredentials.split(':');
   console.log(username)
+  //console.log(decodedCredentials)
   // Make the request to the remote API
   const headers = {
     "Content-Type": "application/json",
