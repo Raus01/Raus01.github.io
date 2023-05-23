@@ -54,6 +54,9 @@ app.get('/proxy', async (req, res) => {
   //console.log(jwt_token)
   //res.send((data));
 });
+app.get("/", (req, res) => {
+  res.send( "server.js says hello");
+});
 
 app.get('/', (req, res) => {
   const filePath = path.resolve(__dirname, 'index.html');
