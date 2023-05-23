@@ -63,7 +63,7 @@ const headers = new Headers({
 
     const credentials = `${username}:${password}`;
   //const encodedData = encoder.encode(credentials);
-  const encodedCredentials = window.btoa(credentials);
+  const encodedCredentials = Buffer.from(credentials).toString('base64');
 
     
     const headers = new Headers({
