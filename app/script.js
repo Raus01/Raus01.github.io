@@ -113,7 +113,7 @@ async function fetchUserData2(jwt_token) {
     const response1 = await queryFetch(`{
       user(where: {id: {_eq: "${sub}"}}) {
         transactions(
-          limit: 100 
+          limit: 200 
           where: {type: {_eq: "down"}, object: {type: {_nregex: "exercise|raid"}}}
         ) {
           amount
@@ -124,7 +124,7 @@ async function fetchUserData2(jwt_token) {
     const response2 = await queryFetch(`{
       user(where: {id: {_eq: "${sub}"}}) {
         transactions(
-          limit: 100 
+          limit: 200 
           where: {type: {_eq: "up"}, object: {type: {_nregex: "exercise|raid"}}}
         ) {
           amount
@@ -176,7 +176,7 @@ async function fetchUserData3(jwt_token) {
     const response1 = await queryFetch(`{
     user(where: {id: {_eq: "${sub}"}}) {
       transactions(
-        limit: 50
+        limit: 200
         order_by: {amount: asc_nulls_first}
         where: {type: {_eq: "xp"}, object: {type: {_nregex: "exercise|raid"}}}
       ) {
@@ -195,7 +195,7 @@ async function fetchUserData3(jwt_token) {
   const response2 = await queryFetch(`{
     user(where: {id: {_eq: "${sub}"}}) {
       progresses(
-        limit: 50
+        limit: 200
         where: {isDone: {_eq: true}, _or: [{object: {type: {_eq: "project"}}}, {object: {type: {_eq: "piscine"}}}]}
       ) {
         isDone
