@@ -85,7 +85,7 @@ const headers = new Headers({
     };
 
     try {
-      const response = await fetch("http://localhost:3000/proxy", options);
+      const response = await fetch("https://electric-blue-puffer-kit.cyclic.app/proxy", options);
       const data = await response.json();
       const token = data.token;
       
